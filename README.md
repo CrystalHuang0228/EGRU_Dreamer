@@ -42,8 +42,12 @@ Comparison of neuronal activity between GRU (Dense) and EGRU (Sparse) during rew
 ├── Networks.py              # Architectures of sub-modules
 ├── Utils.py                 # Utility functions. e.g., replay buffer and loss functions
 ├── images/                  # Figures and media used in README
-├── conf/                    #Hyperparameters
+├── conf/                    # Hyperparameters
 └── README.md
+```
+To execute:
+```
+python Model.py
 ```
 
 ## Credits

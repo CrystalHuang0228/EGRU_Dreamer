@@ -1,0 +1,9 @@
+outputs/
+runs/
+checkpoint/
+videos/
+LabMaze/
+__pycache__/
+*.pth
+*.ckpt
+.DS_Store

@@ -1,0 +1,6 @@
+num_envs: 4
+env_id: "MemoryMaze-9x9-v0"
+env_size: 9
+screen_size: 64
+clip_rewards: True
+frame_stack: 1

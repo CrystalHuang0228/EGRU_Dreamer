@@ -1,0 +1,5 @@
+every: 10000
+resume_from: null # Path to .pth file to resume
+buffer:
+  size: 1000000
+  checkpoint: True

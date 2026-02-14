@@ -1,0 +1,11 @@
+defaults:
+  - algo: dreamer_v3
+  - env: memorymaze
+  - metric: default
+  - checkpoint: default
+  - buffer: default
+  - _self_
+
+device: "cpu" 
+seed: 42
+dry_run: False

@@ -1,0 +1,6 @@
+num_envs: 4
+env_id: "LabMaze-Playground-v0"
+env_size: 15
+screen_size: 64
+clip_rewards: True
+frame_stack: 1

@@ -1,0 +1,79 @@
+batch_size: 16
+sequence_length: 64
+horizon: 32
+gamma: 0.997
+lmbda: 0.95
+total_steps: 1000000
+learning_starts: 1000
+replay_ratio: 1.0
+per_rank_pretrain_steps: 0
+per_rank_batch_size: 16
+per_rank_sequence_length: 64
+
+cnn_keys:
+  encoder: ["image"]
+  decoder: ["image"]
+
+world_model:
+  stochastic_size: 32
+  discrete_size: 32
+  beta_pred: 10.0
+  beta_dyn: 0.5
+  beta_rep: 0.1
+  kl_free_nats: 1.0
+  kl_regularizer: 1.0
+  clip_gradients: 1000.0
+  
+  recurrent_model:
+    recurrent_state_size: 512
+    num_layers: 1
+    
+  posterior_model:
+    hidden_sizes: [512, 512]
+    
+  prior_model:
+    hidden_sizes: [512, 512]
+    
+  reward_model:
+    hidden_sizes: [512, 512]
+    # Bins for Two-Hot encoding (from -20 to 20 as used in Utils.py)
+    bins_param: [-20, 20, 255]
+    
+  continue_model:
+    hidden_sizes: [512, 512]
+    
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 1e-4
+    eps: 1e-8
+
+actor:
+  ent_coef: 3e-3
+  clip_gradients: 100.0
+  # actor_cfg.mlp_params is used in Dreamer.py line 118
+  # Structure: [input_dim, output_dim, [hidden_layers]]
+  # Note: input_dim is calculated in code, so we use a placeholder or handle it in Dreamer.py
+  mlp_params: [1536, 512, [512, 512]] # 1536 = 32*32 (stoch) + 512 (recurrent)
+  
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 3e-5
+    eps: 1e-5
+    
+  moments:
+    decay: 0.99
+    max: 1e8
+    percentile:
+      low: 0.05
+      high: 0.95
+
+critic:
+  hidden_sizes: [512, 512]
+  bins_param: [-20, 20, 255]
+  tau: 0.02
+  per_rank_target_network_update_freq: 1
+  clip_gradients: 100.0
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 3e-5
+    eps: 1e-5

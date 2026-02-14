@@ -37,7 +37,7 @@ Comparison of neuronal activity between GRU (Dense) and EGRU (Sparse) during rew
 ```
 .
 ├── Model.py                 # Entry point for training
-├── dreamer.py               # Core Dreamer v3 implementation
+├── Dreamer.py               # Core Dreamer v3 implementation
 ├── EGRU.py                  # Event-based GRU implementation
 ├── Networks.py              # Architectures of sub-modules
 ├── Utils.py                 # Utility functions. e.g., replay buffer and loss functions

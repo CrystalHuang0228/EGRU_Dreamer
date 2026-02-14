@@ -11,7 +11,39 @@ Key Findings:
 
 ## Architecture
 <p align="center">
-<img src="images/dreamer.pnd" width="80%" alt="Dreamer v3 Architecture">
+<img src="images/dreamer.png" width="80%" alt="Dreamer v3 Architecture">
 <br>
 <em>Figure 1: Training process of Dreamer v3 with integrated EGRU.</em>
 </p>
+
+## Task: Memory Maze
+We evaluate the model on the Memory Maze (9x9) benchmark, a challenging 3D navigation task that requires long-term memory and spatial reasoning.
+<p align="center">
+<img src="images/memorymaze.pdf" width="70%" alt="Memory Maze Task">
+</p>
+### Agent Demonstration (Video)
+<p align="center">
+<video src="images/demo.mp4" width="100%" controls>
+Your browser does not support the video tag.
+</video>
+</p>
+
+## Results
+Activation Sparsity Visualization
+Comparison of neuronal activity between GRU (Dense) and EGRU (Sparse) during reward-seeking phases.
+<p align="center">
+<img src="images/Activation.pdf" width="90%" alt="Activation Sparsity">
+</p>
+
+## Repository Structure
+```
+.
+├── Model.py                 # Entry point for training
+├── dreamer.py               # Core Dreamer v3 implementation
+├── EGRU.py                  # Event-based GRU implementation
+├── Networks.py              # Architectures of sub-modules
+├── Utils.py                 # Utility functions. e.g., replay buffer and loss functions
+├── images/                  # Figures and media used in README
+├── conf/                    #Hyperparameters
+└── README.md
+```

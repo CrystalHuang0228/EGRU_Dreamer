@@ -23,14 +23,14 @@ We evaluate the model on the Memory Maze (9x9) benchmark, a challenging 3D navig
 </p>
 Agent Demonstration (Video)
 <p align="center">
-<img src="images/demo.gif" width="70%">
+<img src="images/demo.gif" width="30%">
 </p>
 
 ## Results
 Activation Sparsity Visualization
 Comparison of neuronal activity between GRU (Dense) and EGRU (Sparse) during reward-seeking phases.
 <p align="center">
-<img src="images/Activation.png" width="90%" alt="Activation Sparsity">
+<img src="images/Activation.png" width="60%" alt="Activation Sparsity">
 </p>
 
 ## Repository Structure
